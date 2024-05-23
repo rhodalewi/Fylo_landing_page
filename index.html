@@ -23,12 +23,18 @@
                 <div class="main1-content">
                     <h1>All your files in one secure location, accessible anywhere.</h1>
                     <p>Fylo stores your most important files in one secure location.  Access them wherever you need, share and collaborate with friends, family, and co-workers.</p>
-                    <input type="text" placeholder="Enter your email..." id="main1-input">
-                    <button type="submit">Get Started</button>
+
+                    <form onsubmit="return validate()">
+                        <div class="msg">
+                            <input type="text" placeholder="Enter your email..." id="inputs" spellcheck="false" onkeyup="validateEmail()"><br>
+                            <span id="message"></span>
+                        </div>
+                        <button type="submit" id="submit">Get Started</button>
+                        
+                    </form>
                 </div>
-                <div class="main1-img">
-                    <img src="images/illustration-1.svg" alt="">
-                </div>
+    
+                    <img src="images/illustration-1.svg" class="main1-img">
             </div>
 
             <div>
@@ -38,7 +44,7 @@
                 <div class="main2-content">
                         <h1 class="main2-h1">Stay productive, wherever you are</h1>
                         <p class="main2-p">Never let location be an issue when accessing your files. Fylo has you covered for all of your file storage needs.</p>
-                        <p class="main2-p2">Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required!</p>
+                        <p class="main2-p2 main2-p">Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required!</p>
 
                         <button class="main2-link">See how Fylo works <img src="images/icon-arrow.svg"></button>
 
@@ -66,10 +72,13 @@
                         If you have any questions, our support team would be happy to help you.</p>
                 </div>
 
+
                 <div class="early-access">
-                    <input type="text" placeholder="email@example.com" id="main3-input">
-                    <br>
-                    <button type="button">Get Started For Free</button>
+                    <form onsubmit="return validate1()">
+                        <input type="text" placeholder="email@example.com" id="inputs1"> <br>
+                        <span id="message1"></span> <br>
+                        <button type="submit" id="submit1">Get Started For Free</button>
+                    </form>
                 </div>
             </div>
         </main>
@@ -107,13 +116,56 @@
 
                     <div class="socials">
                         <img class="facebook" src="./images/facebook.svg" alt="">
-                        <img src="./images/twitter.svg" alt="">
-                        <img src="./images/instagram.svg" alt="">
+                        <img src="./images/twitter.svg">
+                        <img src="./images/instagram.svg">
                     </div>
                 </div> 
             </div>
+
+            <p class="attribution">
+                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"> Frontend Mentor</a>. &nbsp;
+                Coded by <a href="https://github.com/rhodalewi/Fylo_landing_page">Alewi Rhoda</a>.
+              </p>
         </footer>
 
-        <script></script>
+
+        <script>
+            
+            function validate() {
+                var message = document.getElementById('message').value;
+                var inputs = document.getElementById('inputs').value;
+                var pattern = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9]+.)([a-z]+)(.[a-z]+)?$/;
+
+                if (pattern.test(inputs)) {
+                    document.getElementById('message').innerHTML = "";
+                    
+                    return true
+                }
+
+                else {
+                    document.getElementById('message').innerHTML = "Please check your email";
+                    inputs.style.borderColor = "red";
+
+                    return false
+                }
+            }
+
+            function validate1() {
+                var inputs1 = document.getElementById('inputs1').value;
+                var pattern = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9]+.)([a-z]+)(.[a-z]+)?$/;
+
+                if (pattern.test(inputs1)) {
+                    document.getElementById('message1').innerHTML = "";
+                    return true
+                }
+
+                else {
+                    document.getElementById('message1').innerHTML = "Please check your email";
+                    return false
+                }
+            } 
+        </script>
     </body>
 </html>
+
+

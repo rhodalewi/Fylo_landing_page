@@ -15,13 +15,15 @@ body {
     min-width: 1440px;
 }
 
+
+/* NAVIGATION STYLE */
 nav {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   margin: 3rem auto 0;
-   font-family: 'Raleway';
-   width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3rem auto 0;
+    font-family: 'Raleway';
+    width: 90%;
 }
 
 nav .nav-links {
@@ -44,7 +46,7 @@ nav a {
 nav a:hover {
     background-color: hsl(224, 93%, 58%);
     border-radius: 4px;
-    color: hsl(240, 75%, 98%);
+    color: #fff;
         
 }
 
@@ -57,6 +59,8 @@ nav a:hover {
     width: 80px;
 }
 
+
+/* MAIN ONE STYLE */
 .main1 {
     font-family: 'Raleway';
     display: flex;
@@ -65,7 +69,7 @@ nav a:hover {
     padding: 4rem 5rem 8rem;
 }
 
-.main1 img {
+.main1-img {
     width: 568px;
     height: 460px;
 }
@@ -88,8 +92,8 @@ nav a:hover {
     padding-bottom: 1.2rem;
 }
 
-#main1-input,
-#main3-input {
+#inputs,
+#inputs1 {
     width: 280px;
     height: 42px;
     margin-right: 0.7rem;
@@ -98,6 +102,7 @@ nav a:hover {
     font-family: 'Raleway';
     border-radius: 4px;
     padding-left: 1.2rem;
+    color: #333;
 }
 
 input::placeholder {
@@ -105,7 +110,7 @@ input::placeholder {
     font-size: 12px;
 }
 
-.main1 button {
+#submit {
     font-family: 'Raleway';
     padding: 0.9rem 3.2rem;
     background-color: hsl(224, 93%, 58%);
@@ -114,10 +119,22 @@ input::placeholder {
     color: hsl(240, 75%, 98%);
     border-radius: 4px;
     font-weight: 700;
-    box-shadow: 2px 2px 5px 3px hsl(240, 13%, 89%);
+    box-shadow: 3px 3px 5px 3px hsl(240, 13%, 89%);
+    cursor: pointer;
+    height: fit-content;
+}
+
+#submit:hover {
+    background-color:  hsla(224, 93%, 58%, 0.767);
+}
+
+.main1 form {
+    display: flex;
 }
 
 
+
+/* MAIN TWO STYLE */
 .bg-image {
     background-image: url(./images/bg-curve-desktop.svg);
     background-repeat: no-repeat;
@@ -131,7 +148,7 @@ input::placeholder {
     align-items: center;
     background-color: hsl(240, 75%, 98%);
     font-family: 'Raleway';
-    padding: 1rem 5rem;
+    padding: 1rem 5rem 8rem;
     justify-content: space-between;
 }
 
@@ -181,8 +198,9 @@ input::placeholder {
 
 .main2-link:hover, 
 .main2-link:active {
-    box-shadow: 2px 2px 5px 1px hsla(170, 45%, 43%, 0.473);
-    border-bottom: 2px solid hsl(170, 45%, 43%);
+    color: hsl(169, 77%, 75%);
+    border-bottom: 1px solid hsl(169, 77%, 75%);
+    cursor: pointer;
 }
 
 .main2-link img {
@@ -191,12 +209,17 @@ input::placeholder {
     margin-left: 0.4rem;
 }
 
+.main2-link img:hover,
+.main2-link img:active {
+    filter: brightness(0) saturate(100%) invert(99%) sepia(17%) saturate(3704%) hue-rotate(150deg) brightness(89%) contrast(75%);
+}
+
 .ceo{
     width: 380px;
     height: 240px;
     background-color: white;
     border-radius: 4px;
-    box-shadow: 3px 3px 10px 3px hsl(240, 25%, 94%);
+    box-shadow: 5px 5px 40px 10px hsl(240, 25%, 94%);
     padding: 1.6rem 0 1.6rem 1.6rem;
 }
 
@@ -241,6 +264,8 @@ input::placeholder {
     font-weight: 600;
 }
 
+
+/* MAIN THREE STYLE */
 .main3 {
     background-color: hsl(238, 22%, 44%);
     color: hsl(240, 75%, 98%);
@@ -266,7 +291,7 @@ input::placeholder {
     letter-spacing: 1px;
 }
 
-#main3-input {
+.main3 #inputs1 {
     width: 500px;
     height: 48px;
     border-radius: 4px;
@@ -281,17 +306,21 @@ input::placeholder {
     font-weight: 700;
     border-radius: 4px;
     font-family: 'Raleway';
-    margin-top: 1rem;
     box-shadow: 2px 2px 3px 2px hsla(0, 0%, 39%, 0.534);
+    cursor: pointer;
 }
 
-button:hover {
-    background-color:  hsla(224, 93%, 58%, 0.767);
+.main3 button:hover,
+.main3 button:focus {
+    background-color: hsl(224, 100%, 71%);
+    margin-top: 1rem;
 }
 
+
+/* FOOTER STYLE */
 footer {
     background-color: hsl(243, 87%, 12%);
-    color:  hsl(240, 75%, 98%);
+    color: hsl(240, 75%, 98%);
     font-family: 'Raleway';
     font-size: 0.9rem;
 }
@@ -300,9 +329,7 @@ footer {
     width: fit-content;
     display: flex;
     align-items: center;
-    padding-top: 6.8rem;
-    padding-left: 5rem;
-    padding-bottom: 4.5rem;
+    padding: 0 0 4.5rem 5rem;
 }
 
 .footer-content {
@@ -319,10 +346,11 @@ footer a {
     color: inherit;
     text-decoration: none;
     font-family: 'Open Sans';
+    cursor: pointer;
 }
 
 footer a:hover {
-    color: hsl(224, 93%, 58%);
+    color: hsl(238, 22%, 44%);
 }
 
 .phone {
@@ -340,7 +368,7 @@ footer a:hover {
     display: flex;
     width: 700px;
     justify-content: space-between;
-    margin-top: 3rem;
+    margin-top: 9rem;
 }
 
 .infos1  {
@@ -360,29 +388,58 @@ footer a:hover {
 .socials {
     display: flex;
     align-self: flex-start;
-    gap: 0.7rem;
+    gap: 1rem;
+    cursor: pointer;
 }
 
+.socials img:hover {
+    filter: invert(55%) sepia(30%) saturate(921%) hue-rotate(185deg) brightness(94%) contrast(98%);
+}
 
-@media screen and (max-width: 375px) {
+#message{
+    font-size: 12px;
+    color: red;
+}
 
-   /*  body {
-        width: 375px;
-    } */
+#message1 {
+    font-size: 12px;
+    color: #fff;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    font-size: 16px;
+    padding-bottom: 2rem;
+}
+
+.attribution a { 
+    color: hsl(224, 93%, 58%);
+}
+   
+
+
+    /* MOBILE DESIGN */
+
+@media screen and (max-width:375px) {
+
+    body {
+        min-width: 375px;
+        width: fit-content;
+    } 
 
     nav {
-        /* width: 800px; */
-        margin-top: 5rem;
+        margin: 3rem;
     }
 
     nav img {
         width: 200px;
-        height: 66px;
+        height: 64px;
     }
 
     nav .nav-links {
-        font-size: 28px;
-        width: 460px;
+        font-size: 32px;
+        width: 436px;
     } 
 
     nav a {
@@ -404,14 +461,14 @@ footer a:hover {
 
     .main1 {
         flex-direction: column-reverse;
-        padding-top: 3rem;
+        padding: 8rem 0 12rem;
         text-align: center;
         font-family: 'Open Sans';
     }
 
-    .main1 img {
-        width: 632px;
-        height: 472px;
+    .main1-img {
+        width: 700px;
+        height: 600px;
     }
 
     .main1-content {
@@ -422,32 +479,46 @@ footer a:hover {
     }
 
     .main1 h1 {
-        font-size: 3rem;
+        font-size: 3.3rem;
         width: 700px;
-        line-height: 68px;
+        line-height: 72px;
     }
 
     .main1 p {
-        font-size: 28px;
+        font-size: 32px;
         font-weight: 500;
         line-height: 40px;
-        width: 590px;
-        padding-top: 3.5rem;
+        width: 670px;
+        padding-top: 2.2rem;
         padding-bottom: 4rem;
     }
 
-    #main1-input {
-        width: 612px;
+    #inputs {
+        width: 660px;
         height: 80px;
         padding-left: 2.6rem;
     }
 
-    input::placeholder {
-        font-size: 24px;
+    .main1 form {
+        display: flex;
+        flex-direction: column;
     }
 
-    .main1 button {
-        padding: 1.5rem 14.2rem;
+    #message,
+    #message1 {
+        display: flex;
+        align-items:flex-start;
+        font-size: 16px;
+    }
+
+    input::placeholder {
+        font-size: 28px;
+        top: 0.5rem;
+        position: relative;
+    }
+
+    #submit {
+        padding: 1.5rem 15.6rem;
         margin-top: 2rem;
         font-size: 1.75rem;
         font-family: 'Raleway';
@@ -460,131 +531,140 @@ footer a:hover {
 
     .main2 {
         flex-direction: column-reverse;
+        margin: 0;
     }
 
     .main2-img {
-        width: 652px;
-        height: 500px;
+        width: 700px;
+        height: 600px;
     }
 
     .main2-h1 {
         width: 652px;
-        font-size: 34px;
-        text-align: center;
-        padding-top: 6rem;
+        font-size: 38px;
+        left: 4rem;
+        position:relative;
+        padding-top: 10rem;
         padding-bottom: 1rem;
     }
 
-    .main2 p {
-        font-size: 28px;
-        font-weight: 400;
-        line-height: 2.25rem;
-        width: 636px;
+    .main2-p {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 3.2rem;
+        width: 732px;
+    }
+
+    .main2-p2 {
+        padding-top: 1rem;
     }
 
     .main2-link {
-        margin: 3rem auto;
-        font-size: 26px;
+        margin: 3rem auto 5rem;
+        font-size: 32px;
         height: 60px;
     }
 
     .main2-link img {
-        width: 30px;
-        height: 30px;
+        width: 36px;
+        height: 36px;
     }
 
     .ceo {
-        width: 580px;
-        height: 352px;
-        padding-left: 3.2rem;
-        margin-bottom: 10rem;
+        width: 704px;
+        height: 420px;
+        padding: 3rem 0 3rem 3.6rem;
+        margin-bottom: 4rem;
     }
 
     .ceo img {
-        width: 24px;
-        height: 22px;
+        width: 32px;
+        height: 28px;
     }
 
-    .ceo p{
-        font-weight: 700;
-        font-size: 1.25rem;
-        width: 510px;
+    .ceo-speech{
+        font-weight: 500;
+        font-size: 1.6rem;
+        width: 620px;
+        line-height: 2.6rem;
+        padding: 1rem 0;
     }
 
     .ceo-profile img {
-        width: 48px;
-        height: 48px;
+        width: 64px;
+        height: 64px;
     }
 
     .ceo-details .ceo-name {
-        font-size: 20px;
-        font-weight: 900;
-        width: fit-content;
+        font-size: 24px;
+        font-weight:800;
     }
 
     .ceo-details .ceo-position {
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 600;
-        width: fit-content;
+       
     }
 
     .main3 {
         flex-direction: column;
         height: fit-content;
-        padding: 8rem 0;
-        padding-top: 7rem;
+        padding: 8rem 0 8.6rem;
     }
 
     .main3 h2 {
-        font-size: 2.2rem;
+        font-size: 3rem;
         position: relative;
-        left: 6.5rem;
+        left: 8rem;
     }
 
     .main3-p {
-        font-size: 1.6rem;
-        padding: 2.5rem 0;
-        width: 560px;
-        line-height: 40px;
-        font-weight: 400;
+        font-family: 'Open Sans';
+        font-size: 2.3rem;
+        padding: 2rem 0 3.8rem;
+        width: 800px;
+        line-height: 56px;
         text-align: center;
     }
 
-    #main3-input  {
-        width: 480px;
-        height: 64px;
+    .main3 #inputs1  {
+        width: 660px;
+        height: 96px;
     }
 
-    #main3-input::placeholder {
-        font-size: 18px;
+    #main3-input1::placeholder {
+        font-size: 28px;
+        top: 0.5rem;
+        position: relative;
     }
 
     .main3 button {
-        padding: 1.4rem 9.7rem;
-        font-size: 18px;
+        padding: 1.8rem 12.3rem;
+        font-size: 28px;
         font-weight: 500;
+        margin-top: 1.4rem;
     }
 
     footer {
       display: flex;
-      justify-content:center;
+      flex-direction: column;
+      padding-left: 3.5rem;
     }
 
     .all-footer {
         flex-direction: column;  
-        font-size: 1.7rem;
-        padding: 8rem 0 5.8rem;
+        font-size: 2.4rem;
+        padding: 7.4rem 0;
     }
 
     footer a {
-        font-size: 1.7rem;
         padding-bottom: 2rem;
         font-weight: 400;
     }
 
     .footer-logo {
-        width: 348px;
-        height: 102px;
+        width: 364px;
+        height: 116px;
         margin-bottom: 3rem;
     }
 
@@ -599,10 +679,11 @@ footer a:hover {
     
     .infos {
         flex-direction: column;
-        width: 400px;
-        height: 614px;
+        width: 460px;
+        height: 840px;
         align-self: flex-start;
         padding-top: 3.5rem;
+        font-size: 2.3rem;
     }
 
     .socials {
@@ -611,7 +692,7 @@ footer a:hover {
     }
 
     .socials img {
-        width: 52px;
-        height: 52px;
+        width: 64px;
+        height: 64px;
     }
 }
