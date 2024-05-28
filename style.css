@@ -11,8 +11,7 @@ body {
     font-family: 'Open Sans';
     font-size: 1.2rem;
     background-color: #fff;
-    height: 100%;
-    min-width: 1440px;
+    height: 100vh;
 }
 
 
@@ -21,9 +20,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 3rem auto 0;
+    margin: 3rem 5rem 0;
     font-family: 'Raleway';
-    width: 90%;
 }
 
 nav .nav-links {
@@ -92,8 +90,8 @@ nav a:hover {
     padding-bottom: 1.2rem;
 }
 
-#inputs,
-#inputs1 {
+.inputs,
+.inputs1 {
     width: 280px;
     height: 42px;
     margin-right: 0.7rem;
@@ -109,6 +107,10 @@ input::placeholder {
     color: #DADADA;
     font-size: 12px;
 }
+
+input.error {
+    border: 2px solid red;
+  }
 
 #submit {
     font-family: 'Raleway';
@@ -291,7 +293,7 @@ input::placeholder {
     letter-spacing: 1px;
 }
 
-.main3 #inputs1 {
+.main3 .inputs1 {
     width: 500px;
     height: 48px;
     border-radius: 4px;
@@ -311,9 +313,8 @@ input::placeholder {
 }
 
 .main3 button:hover,
-.main3 button:focus {
+.main3 button:active {
     background-color: hsl(224, 100%, 71%);
-    margin-top: 1rem;
 }
 
 
@@ -396,21 +397,27 @@ footer a:hover {
     filter: invert(55%) sepia(30%) saturate(921%) hue-rotate(185deg) brightness(94%) contrast(98%);
 }
 
-#message{
+.message {
     font-size: 12px;
     color: red;
+    padding-top: 0.3rem;
 }
 
-#message1 {
+.message1 {
     font-size: 12px;
     color: #fff;
+    padding-top: 0.3rem;
+}
+
+.input-content {
+    margin-bottom: 1rem;
 }
 
 .attribution { 
     font-size: 11px; 
     text-align: center; 
     font-size: 16px;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 
 .attribution a { 
@@ -418,17 +425,18 @@ footer a:hover {
 }
    
 
+@media screen and (max-width: 1440px) {
+    body {
+        width: fit-content;
+    }
+}
+
 
     /* MOBILE DESIGN */
 
 @media screen and (max-width:375px) {
 
-    body {
-        min-width: 375px;
-        width: fit-content;
-    } 
-
-    nav {
+   nav {
         margin: 3rem;
     }
 
@@ -438,7 +446,7 @@ footer a:hover {
     }
 
     nav .nav-links {
-        font-size: 32px;
+        font-size: 36px;
         width: 436px;
     } 
 
@@ -493,7 +501,7 @@ footer a:hover {
         padding-bottom: 4rem;
     }
 
-    #inputs {
+    .inputs {
         width: 660px;
         height: 80px;
         padding-left: 2.6rem;
@@ -502,10 +510,11 @@ footer a:hover {
     .main1 form {
         display: flex;
         flex-direction: column;
+        text-align: left;
     }
 
-    #message,
-    #message1 {
+    .message,
+    .message1 {
         display: flex;
         align-items:flex-start;
         font-size: 16px;
@@ -518,7 +527,7 @@ footer a:hover {
     }
 
     #submit {
-        padding: 1.5rem 15.6rem;
+        padding: 1.7rem 15.6rem;
         margin-top: 2rem;
         font-size: 1.75rem;
         font-family: 'Raleway';
@@ -627,19 +636,19 @@ footer a:hover {
         text-align: center;
     }
 
-    .main3 #inputs1  {
+    .main3 .inputs1  {
         width: 660px;
         height: 96px;
     }
 
-    #main3-input1::placeholder {
+    .main3-input1::placeholder {
         font-size: 28px;
         top: 0.5rem;
         position: relative;
     }
 
     .main3 button {
-        padding: 1.8rem 12.3rem;
+        padding: 2rem 12.3rem;
         font-size: 28px;
         font-weight: 500;
         margin-top: 1.4rem;
@@ -653,7 +662,7 @@ footer a:hover {
 
     .all-footer {
         flex-direction: column;  
-        font-size: 2.4rem;
+        font-size: 2.2rem;
         padding: 7.4rem 0;
     }
 

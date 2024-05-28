@@ -24,13 +24,12 @@
                     <h1>All your files in one secure location, accessible anywhere.</h1>
                     <p>Fylo stores your most important files in one secure location.  Access them wherever you need, share and collaborate with friends, family, and co-workers.</p>
 
-                    <form onsubmit="return validate()">
+                    <form id="form">
                         <div class="msg">
-                            <input type="text" placeholder="Enter your email..." id="inputs" spellcheck="false" onkeyup="validateEmail()"><br>
-                            <span id="message"></span>
+                            <input type="text" placeholder="Enter your email..." class="inputs"><br>
+                            <span class="message"></span>
                         </div>
                         <button type="submit" id="submit">Get Started</button>
-                        
                     </form>
                 </div>
     
@@ -74,9 +73,11 @@
 
 
                 <div class="early-access">
-                    <form onsubmit="return validate1()">
-                        <input type="text" placeholder="email@example.com" id="inputs1"> <br>
-                        <span id="message1"></span> <br>
+                    <form id="form1">
+                        <div  class="input-content">
+                            <input type="text" placeholder="email@example.com" class="inputs1"> <br>
+                            <span class="message1"></span> 
+                        </div>
                         <button type="submit" id="submit1">Get Started For Free</button>
                     </form>
                 </div>
@@ -130,42 +131,44 @@
 
 
         <script>
+            document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('form');
+            const input = document.querySelector('.inputs');
+            const errorMessage = document.querySelector('.message');
             
-            function validate() {
-                var message = document.getElementById('message').value;
-                var inputs = document.getElementById('inputs').value;
-                var pattern = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9]+.)([a-z]+)(.[a-z]+)?$/;
-
-                if (pattern.test(inputs)) {
-                    document.getElementById('message').innerHTML = "";
-                    
-                    return true
-                }
-
-                else {
-                    document.getElementById('message').innerHTML = "Please check your email";
-                    inputs.style.borderColor = "red";
-
-                    return false
-                }
+        
+            form.addEventListener('submit', function (event) {
+            event.preventDefault();
+        
+            if (input.value.trim() === '') {
+                input.classList.add('error');
+                errorMessage.style.display = 'block';
+                errorMessage.innerHTML = "Please check your email";
+                
+            } else {
+                input.classList.remove('error');
+                errorMessage.style.display = 'none';
             }
+            })
+        });
 
-            function validate1() {
-                var inputs1 = document.getElementById('inputs1').value;
-                var pattern = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9]+.)([a-z]+)(.[a-z]+)?$/;
+        document.addEventListener('DOMContentLoaded', function () {
+            const form1 = document.getElementById('form1');
+            const input1= document.querySelector('.inputs1');
+            const errormessage1  = document.querySelector('.message1')
 
-                if (pattern.test(inputs1)) {
-                    document.getElementById('message1').innerHTML = "";
-                    return true
-                }
-
-                else {
-                    document.getElementById('message1').innerHTML = "Please check your email";
-                    return false
-                }
-            } 
+            form1.addEventListener('submit', function (event) {
+            event.preventDefault();
+        
+            if (input1.value.trim() === '') {
+                input1.classList.add('error');
+                errormessage1.innerHTML = "Please check your email";
+                
+            } else {
+                input1.classList.remove('error');
+            }
+            })
+        });
         </script>
     </body>
 </html>
-
-
